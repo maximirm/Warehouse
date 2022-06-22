@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
-class LoadDatabase {
+class DatabaseLoader {
 
     final static String COMPONENTS_CSV = "src/main/resources/components.csv";
     final static String PRODUCT_CSV = "src/main/resources/products.csv";
