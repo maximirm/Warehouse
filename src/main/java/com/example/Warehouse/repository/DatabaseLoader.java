@@ -4,6 +4,7 @@ import com.example.Warehouse.utils.ProductComponentCsvImporter;
 import com.example.Warehouse.utils.ProductCsvImporter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,8 +15,10 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 class DatabaseLoader {
 
-    final static String COMPONENTS_CSV = "src/main/resources/components.csv";
-    final static String PRODUCT_CSV = "src/main/resources/products.csv";
+    @Value("${warehouse.componentCsv}")
+    private String COMPONENTS_CSV;
+    @Value("${warehouse.productCsv}")
+    private String PRODUCT_CSV;
     private final ProductComponentCsvImporter productComponentCsvImporter;
     private final ProductCsvImporter productCsvImporter;
 
@@ -31,4 +34,3 @@ class DatabaseLoader {
         };
     }
 }
-

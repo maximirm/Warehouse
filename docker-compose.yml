@@ -35,6 +35,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysqlDb:3306/warehouse_db?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=user
       - SPRING_DATASOURCE_PASSWORD=pw
+      - PRODUCT_CSV=app/products.csv
+      - COMPONENT_CSV=app/components.csv
     volumes:
       - ./:/app/app
-
