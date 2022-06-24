@@ -51,6 +51,7 @@ public class ProductCsvImporter {
                 records.add(Arrays.asList(values));
             }
         } catch (IOException e) {
+            e.printStackTrace();
             log.error("failed loading csv file in " + this.getClass());
             return Collections.emptyList();
         }

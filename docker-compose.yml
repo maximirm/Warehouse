@@ -28,9 +28,9 @@ services:
       context: .
       dockerfile: .docker/Dockerfile
     ports:
-      - 8080:8080
+      - 8081:8081
     expose:
-      - 8080
+      - 8081
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysqlDb:3306/warehouse_db?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=user

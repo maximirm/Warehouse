@@ -25,6 +25,7 @@ public class ProductComponentCsvImporter {
                     .readValues(new File(fileName));
             return mappingIterator.readAll();
         } catch (IOException e) {
+            e.printStackTrace();
             log.error("failed loading csv file in " + this.getClass());
             return Collections.emptyList();
         }
