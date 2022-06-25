@@ -1,6 +1,6 @@
-package com.example.Warehouse.controller;
+package com.example.Warehouse.api;
 
-import com.example.Warehouse.controller.dto.ProductResponse;
+import com.example.Warehouse.api.dto.ProductComponentResponse;
 import com.example.Warehouse.service.WarehouseService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,19 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RestController
 @Slf4j
 @RequiredArgsConstructor
-public class ProductController {
+@RestController
+public class ProductComponentController {
 
     private final WarehouseService warehouseService;
 
-    @GetMapping("/products")
-    public List<ProductResponse> retrieveAllProducts() {
-        log.info("retrieve all Products");
-        return warehouseService.retrieveAllProducts()
+    @GetMapping("/components")
+    public List<ProductComponentResponse> getAllProductComponents() {
+
+        log.info("retrieve all Product Components");
+        return warehouseService
+                .retrieveAllProductComponents()
                 .stream()
-                .map(ProductConverter::toProductResponse)
+                .map(ProductComponentConverter::toProductComponentResponse)
                 .collect(Collectors.toList());
     }
 }

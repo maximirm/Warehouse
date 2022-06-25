@@ -1,4 +1,4 @@
-package com.example.Warehouse.repository;
+package com.example.Warehouse.repository.jpa;
 
 import com.example.Warehouse.utils.ProductComponentCsvImporter;
 import com.example.Warehouse.utils.ProductCsvImporter;
@@ -23,13 +23,13 @@ class DatabaseLoader {
     private final ProductCsvImporter productCsvImporter;
 
     @Bean
-    CommandLineRunner initDatabase(ProductComponentRepository productComponentRepository,
-                                   ProductRepository productRepository) {
+    CommandLineRunner initDatabase(ProductComponentJpaRepository productComponentJpaRepository,
+                                   ProductJpaRepository productJpaRepository) {
         return args -> {
             log.info("initiating Database");
             final var productComponents = productComponentCsvImporter.importDataFromCsv(COMPONENTS_CSV);
-            productComponentRepository.saveAll(productComponents);
-            productRepository.saveAll(productCsvImporter.importDataFromCsv(PRODUCT_CSV, productComponents));
+            productComponentJpaRepository.saveAll(productComponents);
+            productJpaRepository.saveAll(productCsvImporter.importDataFromCsv(PRODUCT_CSV, productComponents));
             log.info("Database initiated successfully");
         };
     }

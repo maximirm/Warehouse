@@ -1,4 +1,4 @@
-package com.example.Warehouse.entity;
+package com.example.Warehouse.repository.jpa;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +21,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Accessors(chain = true)
 @Entity
-public class Product {
+public class ProductEntity {
 
     @Id()
     @Column(nullable = false, unique = true, columnDefinition = "BINARY(16)")
@@ -32,5 +32,5 @@ public class Product {
     @Column
     @ManyToMany
     @JoinTable
-    private List<ProductComponent> components;
+    private List<ProductComponentEntity> components;
 }

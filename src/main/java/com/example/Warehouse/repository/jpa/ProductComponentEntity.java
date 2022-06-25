@@ -1,4 +1,4 @@
-package com.example.Warehouse.entity;
+package com.example.Warehouse.repository.jpa;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import javax.persistence.Id;
 @Accessors(chain = true)
 @Entity
 @JsonPropertyOrder({"id", "name", "price", "weight", "color", "origin", "awesomeness", "farmer", "organic", "calories"})
-public class ProductComponent {
+public class ProductComponentEntity {
 
     @Id
     @Column(nullable = false, unique = true)

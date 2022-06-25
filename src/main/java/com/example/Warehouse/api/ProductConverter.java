@@ -1,7 +1,7 @@
-package com.example.Warehouse.controller;
+package com.example.Warehouse.api;
 
-import com.example.Warehouse.controller.dto.ProductResponse;
-import com.example.Warehouse.entity.Product;
+import com.example.Warehouse.api.dto.ProductResponse;
+import com.example.Warehouse.domain.Product;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

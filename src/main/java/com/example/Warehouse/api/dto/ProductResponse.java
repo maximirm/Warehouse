@@ -1,6 +1,6 @@
-package com.example.Warehouse.controller.dto;
+package com.example.Warehouse.api.dto;
 
-import com.example.Warehouse.entity.ProductComponent;
+import com.example.Warehouse.repository.jpa.ProductComponentEntity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -13,6 +13,6 @@ public class ProductResponse {
 
     private UUID id;
     private String name;
-    private List<ProductComponent> components;
+    private List<ProductComponentEntity> components;
 
 }

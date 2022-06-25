@@ -21,7 +21,7 @@ services:
     depends_on:
       mysqlDb:
         condition: service_healthy
-    container_name: SpringBootApp
+    container_name: WarehouseApp
     restart: on-failure
     command: java -jar target/WarehouseApplication-0.0.1-SNAPSHOT.jar
     build:

@@ -1,7 +1,7 @@
 package com.example.Warehouse.utils;
 
-import com.example.Warehouse.entity.Product;
-import com.example.Warehouse.entity.ProductComponent;
+import com.example.Warehouse.repository.jpa.ProductEntity;
+import com.example.Warehouse.repository.jpa.ProductComponentEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -18,25 +18,25 @@ import java.util.stream.Collectors;
 @Component
 public class ProductCsvImporter {
 
-    public List<Product> importDataFromCsv(String fileName, List<ProductComponent> productComponents) {
+    public List<ProductEntity> importDataFromCsv(String fileName, List<ProductComponentEntity> productComponentEntities) {
 
         return importLinesFromCsv(fileName)
                 .stream()
-                .map(line -> createProduct(productComponents, line))
+                .map(line -> createProduct(productComponentEntities, line))
                 .collect(Collectors.toList());
     }
 
-    private Product createProduct(List<ProductComponent> productComponents, List<String> line) {
-        return new Product()
+    private ProductEntity createProduct(List<ProductComponentEntity> productComponentEntities, List<String> line) {
+        return new ProductEntity()
                 .setName(line.get(0))
-                .setComponents(getComponents(line.get(1), productComponents));
+                .setComponents(getComponents(line.get(1), productComponentEntities));
     }
 
-    private List<ProductComponent> getComponents(String lineOfRequiredComponents, List<ProductComponent> productComponents) {
+    private List<ProductComponentEntity> getComponents(String lineOfRequiredComponents, List<ProductComponentEntity> productComponentEntities) {
 
         return Arrays
                 .stream(lineOfRequiredComponents.split("-"))
-                .map(componentId -> productComponents.get(Integer.parseInt(componentId)))
+                .map(componentId -> productComponentEntities.get(Integer.parseInt(componentId)))
                 .collect(Collectors.toList());
     }
 

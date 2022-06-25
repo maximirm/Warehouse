@@ -1,7 +1,11 @@
 package com.example.Warehouse.repository;
 
-import com.example.Warehouse.entity.Product;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.Warehouse.domain.Product;
 
-public interface ProductRepository extends JpaRepository<Product, Long> {
+import java.util.List;
+
+public interface ProductRepository {
+
+    List<Product> findAll();
+
 }
