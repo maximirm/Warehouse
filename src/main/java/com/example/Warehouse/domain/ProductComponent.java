@@ -1,7 +1,6 @@
 package com.example.Warehouse.domain;
 
 import com.example.Warehouse.repository.jpa.ProductComponentEntity;
-import com.example.Warehouse.repository.jpa.ProductEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +25,7 @@ public class ProductComponent {
     private boolean organic;
     private int calories;
 
-    public static ProductComponent from (ProductComponentEntity productComponentEntity) {
+    public static ProductComponent from(ProductComponentEntity productComponentEntity) {
         return new ProductComponent()
                 .setId(productComponentEntity.getId())
                 .setName(productComponentEntity.getName())
