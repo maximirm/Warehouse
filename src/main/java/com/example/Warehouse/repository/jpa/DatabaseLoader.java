@@ -23,13 +23,13 @@ class DatabaseLoader {
     private final ProductCsvImporter productCsvImporter;
 
     @Bean
-    CommandLineRunner initDatabase(ProductComponentJpaRepository productComponentJpaRepository,
-                                   ProductJpaRepository productJpaRepository) {
+    CommandLineRunner initDatabase(ProductComponentEntityJpaRepository productComponentEntityJpaRepository,
+                                   ProductEntityJpaRepository productEntityJpaRepository) {
         return args -> {
             log.info("initiating Database");
             final var productComponents = productComponentCsvImporter.importDataFromCsv(COMPONENTS_CSV);
-            productComponentJpaRepository.saveAll(productComponents);
-            productJpaRepository.saveAll(productCsvImporter.importDataFromCsv(PRODUCT_CSV, productComponents));
+            productComponentEntityJpaRepository.saveAll(productComponents);
+            productEntityJpaRepository.saveAll(productCsvImporter.importDataFromCsv(PRODUCT_CSV, productComponents));
             log.info("Database initiated successfully");
         };
     }

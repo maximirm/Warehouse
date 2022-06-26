@@ -1,7 +1,7 @@
 package com.example.Warehouse.repository;
 
 import com.example.Warehouse.domain.ProductComponent;
-import com.example.Warehouse.repository.jpa.ProductComponentJpaRepository;
+import com.example.Warehouse.repository.jpa.ProductComponentEntityJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductComponentRepositoryImpl implements ProductComponentRepository {
 
-    private final ProductComponentJpaRepository productComponentJpaRepository;
+    private final ProductComponentEntityJpaRepository productComponentEntityJpaRepository;
 
     @Override
     public List<ProductComponent> findAll() {
-        return productComponentJpaRepository.findAll().stream()
+        return productComponentEntityJpaRepository.findAll().stream()
                 .map(ProductComponent::from)
                 .collect(Collectors.toList());
     }
