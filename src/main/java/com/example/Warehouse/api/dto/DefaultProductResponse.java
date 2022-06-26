@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Data
 @Accessors(chain = true)
-public class ProductResponse {
+public class DefaultProductResponse {
 
     private UUID id;
     private String name;

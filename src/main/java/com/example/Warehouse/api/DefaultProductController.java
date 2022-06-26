@@ -1,6 +1,6 @@
 package com.example.Warehouse.api;
 
-import com.example.Warehouse.api.dto.ProductResponse;
+import com.example.Warehouse.api.dto.DefaultProductResponse;
 import com.example.Warehouse.service.WarehouseService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,16 +13,16 @@ import java.util.stream.Collectors;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-public class ProductController {
+public class DefaultProductController {
 
     private final WarehouseService warehouseService;
 
-    @GetMapping("/products")
-    public List<ProductResponse> retrieveAllProducts() {
-        log.info("retrieve all Products");
-        return warehouseService.retrieveAllProducts()
+    @GetMapping("/defaultProducts")
+    public List<DefaultProductResponse> retrieveAllProducts() {
+        log.info("retrieve all Default Products");
+        return warehouseService.retrieveAllDefaultProducts()
                 .stream()
-                .map(ProductConverter::toProductResponse)
+                .map(DefaultProductConverter::toProductResponse)
                 .collect(Collectors.toList());
     }
 }

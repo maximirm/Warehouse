@@ -2,5 +2,5 @@ package com.example.Warehouse.repository.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductEntityJpaRepository extends JpaRepository<ProductEntity, Long> {
+public interface DefaultProductEntityJpaRepository extends JpaRepository<DefaultProductEntity, Long> {
 }

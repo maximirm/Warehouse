@@ -1,7 +1,7 @@
 package com.example.Warehouse.domain;
 
 import com.example.Warehouse.repository.jpa.ProductComponentEntity;
-import com.example.Warehouse.repository.jpa.ProductEntity;
+import com.example.Warehouse.repository.jpa.DefaultProductEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,17 +17,17 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class Product {
+public class DefaultProduct {
 
     private UUID id;
     private String name;
     private List<ProductComponentEntity> components;
 
-    public static Product from(ProductEntity productEntity) {
-        return new Product()
-                .setId(productEntity.getId())
-                .setName(productEntity.getName())
-                .setComponents(productEntity.getComponents());
+    public static DefaultProduct from(DefaultProductEntity defaultProductEntity) {
+        return new DefaultProduct()
+                .setId(defaultProductEntity.getId())
+                .setName(defaultProductEntity.getName())
+                .setComponents(defaultProductEntity.getComponents());
     }
 
 }

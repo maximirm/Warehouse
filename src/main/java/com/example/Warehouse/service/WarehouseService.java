@@ -1,9 +1,9 @@
 package com.example.Warehouse.service;
 
-import com.example.Warehouse.domain.Product;
+import com.example.Warehouse.domain.DefaultProduct;
 import com.example.Warehouse.domain.ProductComponent;
 import com.example.Warehouse.repository.ProductComponentRepository;
-import com.example.Warehouse.repository.ProductRepository;
+import com.example.Warehouse.repository.DefaultProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,13 +15,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class WarehouseService {
 
-    private final ProductRepository productRepository;
+    private final DefaultProductRepository defaultProductRepository;
     private final ProductComponentRepository productComponentRepository;
 
 
-    public List<Product> retrieveAllProducts() {
-        log.info("retrieve All Products");
-        return productRepository.findAll();
+    public List<DefaultProduct> retrieveAllDefaultProducts() {
+        log.info("retrieve All Default Products");
+        return defaultProductRepository.findAll();
     }
 
     public List<ProductComponent> retrieveAllProductComponents() {

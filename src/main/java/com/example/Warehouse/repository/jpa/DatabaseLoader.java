@@ -1,7 +1,7 @@
 package com.example.Warehouse.repository.jpa;
 
 import com.example.Warehouse.utils.ProductComponentCsvImporter;
-import com.example.Warehouse.utils.ProductCsvImporter;
+import com.example.Warehouse.utils.DefaultProductCsvImporter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,16 +20,16 @@ class DatabaseLoader {
     @Value("${warehouse.productCsv}")
     private String PRODUCT_CSV;
     private final ProductComponentCsvImporter productComponentCsvImporter;
-    private final ProductCsvImporter productCsvImporter;
+    private final DefaultProductCsvImporter defaultProductCsvImporter;
 
     @Bean
     CommandLineRunner initDatabase(ProductComponentEntityJpaRepository productComponentEntityJpaRepository,
-                                   ProductEntityJpaRepository productEntityJpaRepository) {
+                                   DefaultProductEntityJpaRepository defaultProductEntityJpaRepository) {
         return args -> {
             log.info("initiating Database");
             final var productComponents = productComponentCsvImporter.importDataFromCsv(COMPONENTS_CSV);
             productComponentEntityJpaRepository.saveAll(productComponents);
-            productEntityJpaRepository.saveAll(productCsvImporter.importDataFromCsv(PRODUCT_CSV, productComponents));
+            defaultProductEntityJpaRepository.saveAll(defaultProductCsvImporter.importDataFromCsv(PRODUCT_CSV, productComponents));
             log.info("Database initiated successfully");
         };
     }

@@ -21,7 +21,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Accessors(chain = true)
 @Entity
-public class ProductEntity {
+public class DefaultProductEntity {
 
     @Id()
     @Column(nullable = false, unique = true, columnDefinition = "BINARY(16)")

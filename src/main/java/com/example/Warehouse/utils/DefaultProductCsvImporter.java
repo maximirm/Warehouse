@@ -1,6 +1,6 @@
 package com.example.Warehouse.utils;
 
-import com.example.Warehouse.repository.jpa.ProductEntity;
+import com.example.Warehouse.repository.jpa.DefaultProductEntity;
 import com.example.Warehouse.repository.jpa.ProductComponentEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Component
-public class ProductCsvImporter {
+public class DefaultProductCsvImporter {
 
-    public List<ProductEntity> importDataFromCsv(String fileName, List<ProductComponentEntity> productComponentEntities) {
+    public List<DefaultProductEntity> importDataFromCsv(String fileName, List<ProductComponentEntity> productComponentEntities) {
 
         return importLinesFromCsv(fileName)
                 .stream()
@@ -26,8 +26,8 @@ public class ProductCsvImporter {
                 .collect(Collectors.toList());
     }
 
-    private ProductEntity createProduct(List<ProductComponentEntity> productComponentEntities, List<String> line) {
-        return new ProductEntity()
+    private DefaultProductEntity createProduct(List<ProductComponentEntity> productComponentEntities, List<String> line) {
+        return new DefaultProductEntity()
                 .setName(line.get(0))
                 .setComponents(getComponents(line.get(1), productComponentEntities));
     }
