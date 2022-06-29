@@ -10,7 +10,6 @@ import lombok.experimental.Accessors;
 
 
 import java.util.List;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -19,13 +18,13 @@ import java.util.UUID;
 @Accessors(chain = true)
 public class DefaultProduct {
 
-    private UUID id = UUID.randomUUID();
+    private int id;
     private String name;
     private List<ProductComponentEntity> components;
 
     public static DefaultProduct from(DefaultProductEntity defaultProductEntity) {
         return new DefaultProduct()
-                .setId(UUID.randomUUID())
+                .setId(defaultProductEntity.getId())
                 .setName(defaultProductEntity.getName())
                 .setComponents(defaultProductEntity.getComponents());
     }
