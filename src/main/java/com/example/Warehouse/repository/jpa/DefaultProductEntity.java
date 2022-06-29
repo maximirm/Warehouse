@@ -8,12 +8,10 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import java.util.List;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -23,11 +21,11 @@ import java.util.UUID;
 @Entity
 public class DefaultProductEntity {
 
-    @Id()
-    @Column(nullable = false, unique = true, columnDefinition = "BINARY(16)")
-    @GeneratedValue
-    private UUID id;
+
+    @Id
     @Column(nullable = false, unique = true)
+    private int id;
+    @Column(nullable = false)
     private String name;
     @Column
     @ManyToMany

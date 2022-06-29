@@ -19,13 +19,13 @@ import java.util.UUID;
 @Accessors(chain = true)
 public class DefaultProduct {
 
-    private UUID id;
+    private UUID id = UUID.randomUUID();
     private String name;
     private List<ProductComponentEntity> components;
 
     public static DefaultProduct from(DefaultProductEntity defaultProductEntity) {
         return new DefaultProduct()
-                .setId(defaultProductEntity.getId())
+                .setId(UUID.randomUUID())
                 .setName(defaultProductEntity.getName())
                 .setComponents(defaultProductEntity.getComponents());
     }
