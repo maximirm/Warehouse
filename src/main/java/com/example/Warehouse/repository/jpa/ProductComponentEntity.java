@@ -20,6 +20,7 @@ import javax.persistence.Id;
 @JsonPropertyOrder({"id", "name", "price", "weight", "color", "origin", "awesomeness", "farmer", "organic", "calories"})
 public class ProductComponentEntity {
 
+
     @Id
     @Column(nullable = false, unique = true)
     private int id;

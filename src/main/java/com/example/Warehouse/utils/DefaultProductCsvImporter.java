@@ -28,8 +28,9 @@ public class DefaultProductCsvImporter {
 
     private DefaultProductEntity createProduct(List<ProductComponentEntity> productComponentEntities, List<String> line) {
         return new DefaultProductEntity()
-                .setName(line.get(0))
-                .setComponents(getComponents(line.get(1), productComponentEntities));
+                .setId(Integer.parseInt(line.get(0)))
+                .setName(line.get(1))
+                .setComponents(getComponents(line.get(2), productComponentEntities));
     }
 
     private List<ProductComponentEntity> getComponents(String lineOfRequiredComponents, List<ProductComponentEntity> productComponentEntities) {
