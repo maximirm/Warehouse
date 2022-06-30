@@ -46,7 +46,7 @@ class DatabaseLoader {
 
     private List<ProductComponentEntity> removeDuplicates(ProductComponentEntityJpaRepository repository, List<ProductComponentEntity> jpaEntities) {
 
-        List<Integer> idsOfPresentEntities = getIdsOfPresentEntities(repository);
+        var idsOfPresentEntities = getIdsOfPresentEntities(repository);
 
         return jpaEntities.stream()
                 .filter(p -> !idsOfPresentEntities.contains(p.getId()))
@@ -55,7 +55,7 @@ class DatabaseLoader {
 
     private List<DefaultProductEntity> removeDuplicates(DefaultProductEntityJpaRepository repository, List<DefaultProductEntity> jpaEntities) {
 
-        List<Integer> idsOfPresentEntities = getIdsOfPresentEntities(repository);
+        var idsOfPresentEntities = getIdsOfPresentEntities(repository);
 
         return jpaEntities.stream()
                 .filter(p -> !idsOfPresentEntities.contains(p.getId()))

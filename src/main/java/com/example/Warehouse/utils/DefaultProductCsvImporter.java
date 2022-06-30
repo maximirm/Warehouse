@@ -43,9 +43,9 @@ public class DefaultProductCsvImporter {
 
     private List<List<String>> importLinesFromCsv(String fileName) {
 
-        final List<List<String>> records = new ArrayList<>();
+        var records = new ArrayList<List<String>>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            var br = new BufferedReader(new FileReader(fileName));
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
