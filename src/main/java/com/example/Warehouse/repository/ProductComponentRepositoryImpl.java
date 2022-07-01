@@ -1,6 +1,6 @@
 package com.example.Warehouse.repository;
 
-import com.example.Warehouse.domain.ProductComponent;
+import com.example.Warehouse.entity.ProductComponent;
 import com.example.Warehouse.repository.jpa.ProductComponentEntityJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

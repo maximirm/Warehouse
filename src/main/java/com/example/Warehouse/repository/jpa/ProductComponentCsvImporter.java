@@ -1,6 +1,5 @@
-package com.example.Warehouse.utils;
+package com.example.Warehouse.repository.jpa;
 
-import com.example.Warehouse.repository.jpa.ProductComponentEntity;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;

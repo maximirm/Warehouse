@@ -1,9 +1,10 @@
-package com.example.Warehouse.service;
+package com.example.Warehouse.domain;
 
-import com.example.Warehouse.domain.DefaultProduct;
-import com.example.Warehouse.domain.ProductComponent;
-import com.example.Warehouse.repository.ProductComponentRepository;
+
+import com.example.Warehouse.entity.DefaultProduct;
+import com.example.Warehouse.entity.ProductComponent;
 import com.example.Warehouse.repository.DefaultProductRepository;
+import com.example.Warehouse.repository.ProductComponentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

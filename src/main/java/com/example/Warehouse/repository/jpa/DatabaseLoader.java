@@ -1,7 +1,5 @@
 package com.example.Warehouse.repository.jpa;
 
-import com.example.Warehouse.utils.ProductComponentCsvImporter;
-import com.example.Warehouse.utils.DefaultProductCsvImporter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
