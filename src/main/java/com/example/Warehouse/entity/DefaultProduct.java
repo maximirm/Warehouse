@@ -1,7 +1,5 @@
 package com.example.Warehouse.entity;
 
-import com.example.Warehouse.repository.jpa.ProductComponentEntity;
-import com.example.Warehouse.repository.jpa.DefaultProductEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
