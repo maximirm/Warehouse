@@ -1,6 +1,6 @@
 package com.example.Warehouse.api;
 
-import com.example.Warehouse.api.dto.ProductComponentResponse;
+import com.example.Warehouse.entity.ProductComponentResponse;
 import com.example.Warehouse.entity.ProductComponent;
 import lombok.experimental.UtilityClass;
 

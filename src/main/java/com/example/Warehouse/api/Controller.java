@@ -1,7 +1,7 @@
 package com.example.Warehouse.api;
 
-import com.example.Warehouse.api.dto.DefaultProductResponse;
-import com.example.Warehouse.api.dto.ProductComponentResponse;
+import com.example.Warehouse.entity.DefaultProductResponse;
+import com.example.Warehouse.entity.ProductComponentResponse;
 import com.example.Warehouse.domain.WarehouseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.example.Warehouse.api.dto;
+package com.example.Warehouse.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
