@@ -2,7 +2,7 @@ version: "3.9"
 services:
   mysqlDb:
     image: mysql:latest
-    restart: always
+    restart: unless-stopped
     ports:
       - 3306:3306
     environment:
@@ -24,7 +24,7 @@ services:
       mysqlDb:
         condition: service_healthy
     container_name: WarehouseApp
-    restart: on-failure
+    restart: unless-stopped
     command: java -jar target/WarehouseApplication-0.0.1-SNAPSHOT.jar
     build:
       context: .
@@ -47,6 +47,7 @@ services:
   rabbitmq:
     image: rabbitmq:3-management-alpine
     container_name: rabbitmq
+    restart: unless-stopped
     ports:
       - 5672:5672
       - 15672:15672
