@@ -1,5 +1,7 @@
 package com.example.Warehouse.api.dto;
 
+import com.example.Warehouse.entity.ProductComponent;
+import com.example.Warehouse.entity.ProductComponentEntity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -17,4 +19,18 @@ public class ProductComponentResponse {
     private String farmer;
     private boolean organic;
     private int calories;
+
+    public static ProductComponentResponse from(ProductComponent productComponent) {
+        return new ProductComponentResponse()
+                .setId(productComponent.getId())
+                .setName(productComponent.getName())
+                .setPrice(productComponent.getPrice())
+                .setWeight(productComponent.getWeight())
+                .setColor(productComponent.getColor())
+                .setOrigin(productComponent.getOrigin())
+                .setAwesomeness(productComponent.getAwesomeness())
+                .setFarmer(productComponent.getFarmer())
+                .setOrganic(productComponent.isOrganic())
+                .setCalories(productComponent.getCalories());
+    }
 }

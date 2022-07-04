@@ -1,6 +1,5 @@
 package com.example.Warehouse.api.dto;
 
-import com.example.Warehouse.entity.ProductComponentEntity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -12,6 +11,6 @@ public class DefaultProductResponse {
 
     private int id;
     private String name;
-    private List<ProductComponentEntity> components;
+    private List<ProductComponentResponse> components;
 
 }

@@ -1,8 +1,11 @@
 package com.example.Warehouse.api;
 
 import com.example.Warehouse.api.dto.DefaultProductResponse;
+import com.example.Warehouse.api.dto.ProductComponentResponse;
 import com.example.Warehouse.entity.DefaultProduct;
 import lombok.experimental.UtilityClass;
+
+import java.util.stream.Collectors;
 
 @UtilityClass
 public class DefaultProductConverter {
@@ -11,6 +14,10 @@ public class DefaultProductConverter {
         return new DefaultProductResponse()
                 .setId(defaultProduct.getId())
                 .setName(defaultProduct.getName())
-                .setComponents(defaultProduct.getComponents());
+                .setComponents(defaultProduct.getComponents()
+                        .stream()
+                        .map(ProductComponentResponse::from)
+                        .collect(Collectors.toList())
+                );
     }
 }

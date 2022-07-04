@@ -1,9 +1,9 @@
 package com.example.Warehouse.api;
 
 import com.example.Warehouse.api.dto.DefaultProductResponse;
+import com.example.Warehouse.api.dto.ProductComponentResponse;
 import com.example.Warehouse.domain.WarehouseService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,18 +11,26 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@Slf4j
 @RequiredArgsConstructor
-public class DefaultProductController {
+public class Controller {
 
     private final WarehouseService warehouseService;
 
     @GetMapping("/defaultProducts")
     public List<DefaultProductResponse> retrieveAllProducts() {
-        log.info("retrieve all Default Products");
         return warehouseService.retrieveAllDefaultProducts()
                 .stream()
                 .map(DefaultProductConverter::toProductResponse)
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/components")
+    public List<ProductComponentResponse> getAllProductComponents() {
+
+        return warehouseService
+                .retrieveAllProductComponents()
+                .stream()
+                .map(ProductComponentConverter::toProductComponentResponse)
                 .collect(Collectors.toList());
     }
 }
