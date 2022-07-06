@@ -20,7 +20,7 @@ public class Controller {
     public List<DefaultProductResponse> retrieveAllProducts() {
         return warehouseService.retrieveAllDefaultProducts()
                 .stream()
-                .map(DefaultProductConverter::toProductResponse)
+                .map(DefaultProductResponse::from)
                 .collect(Collectors.toList());
     }
 
@@ -30,7 +30,7 @@ public class Controller {
         return warehouseService
                 .retrieveAllProductComponents()
                 .stream()
-                .map(ProductComponentConverter::toProductComponentResponse)
+                .map(ProductComponentResponse::from)
                 .collect(Collectors.toList());
     }
 }
