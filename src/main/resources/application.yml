@@ -21,6 +21,3 @@ spring:
 server:
   port: 8081
 
-warehouse:
-  productCsv: ${PRODUCT_CSV:src/main/resources/products.csv}
-  componentCsv: ${COMPONENT_CSV:src/main/resources/components.csv}

@@ -21,10 +21,8 @@ class DatabaseLoader {
     private final ProductComponentCsvImporter productComponentCsvImporter;
     private final DefaultProductCsvImporter defaultProductCsvImporter;
 
-    @Value("${warehouse.componentCsv}")
-    private String COMPONENTS_CSV;
-    @Value("${warehouse.productCsv}")
-    private String PRODUCT_CSV;
+    private final String PRODUCT_CSV = "src/main/resources/products.csv";
+    private final String COMPONENTS_CSV = "src/main/resources/components.csv";
 
     @Bean
     CommandLineRunner initDatabase(ProductComponentEntityJpaRepository productComponentEntityJpaRepository,
