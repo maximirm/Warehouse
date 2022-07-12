@@ -1,4 +1,4 @@
-package com.example.Warehouse.entity;
+package com.example.Warehouse.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;

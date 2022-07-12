@@ -1,6 +1,6 @@
 package com.example.Warehouse.repository;
 
-import com.example.Warehouse.entity.DefaultProduct;
+import com.example.Warehouse.domain.entity.DefaultProduct;
 import com.example.Warehouse.repository.jpa.DefaultProductEntityJpaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

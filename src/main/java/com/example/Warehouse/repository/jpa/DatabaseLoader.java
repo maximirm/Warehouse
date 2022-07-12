@@ -1,10 +1,9 @@
 package com.example.Warehouse.repository.jpa;
 
-import com.example.Warehouse.entity.DefaultProductEntity;
-import com.example.Warehouse.entity.ProductComponentEntity;
+import com.example.Warehouse.domain.entity.DefaultProductEntity;
+import com.example.Warehouse.domain.entity.ProductComponentEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,8 +1,8 @@
 package com.example.Warehouse.domain;
 
 
-import com.example.Warehouse.entity.DefaultProduct;
-import com.example.Warehouse.entity.ProductComponent;
+import com.example.Warehouse.domain.entity.DefaultProduct;
+import com.example.Warehouse.domain.entity.ProductComponent;
 import com.example.Warehouse.repository.DefaultProductRepository;
 import com.example.Warehouse.repository.ProductComponentRepository;
 import lombok.RequiredArgsConstructor;
