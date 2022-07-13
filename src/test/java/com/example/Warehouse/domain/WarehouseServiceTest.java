@@ -16,7 +16,6 @@ class WarehouseServiceTest {
 
     @InjectMocks
     private WarehouseService warehouseService;
-
     @Mock
     private DefaultProductRepository defaultProductRepository;
     @Mock

@@ -21,7 +21,6 @@ public class ControllerTestIT {
 
     @Autowired
     private MockMvc mockMvc;
-
     @MockBean
     private WarehouseService warehouseService;
 
