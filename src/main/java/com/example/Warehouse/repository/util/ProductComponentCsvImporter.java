@@ -1,6 +1,6 @@
-package com.example.Warehouse.repository.jpa;
+package com.example.Warehouse.repository.util;
 
-import com.example.Warehouse.domain.entity.ProductComponentEntity;
+import com.example.Warehouse.repository.jpa.ProductComponentEntity;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;
@@ -19,10 +19,12 @@ public class ProductComponentCsvImporter {
     public List<ProductComponentEntity> importDataFromCsv(String fileName) {
 
         try {
-            final MappingIterator<ProductComponentEntity> mappingIterator = new CsvMapper()
+            final MappingIterator<ProductComponentEntity> mappingIterator =
+                    new CsvMapper()
                     .enable(CsvParser.Feature.WRAP_AS_ARRAY)
                     .readerWithSchemaFor(ProductComponentEntity.class)
                     .readValues(new File(fileName));
+
             return mappingIterator.readAll();
         } catch (IOException e) {
             e.printStackTrace();

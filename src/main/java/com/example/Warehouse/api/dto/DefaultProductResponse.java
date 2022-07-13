@@ -1,5 +1,6 @@
-package com.example.Warehouse.domain.entity;
+package com.example.Warehouse.api.dto;
 
+import com.example.Warehouse.domain.entity.DefaultProduct;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

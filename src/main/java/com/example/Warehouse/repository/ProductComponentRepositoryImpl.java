@@ -21,7 +21,9 @@ public class ProductComponentRepositoryImpl implements ProductComponentRepositor
     @Override
     public List<ProductComponent> findAll() {
         log.info("get product components from repo without cache");
-        return productComponentEntityJpaRepository.findAll().stream()
+        return productComponentEntityJpaRepository
+                .findAll()
+                .stream()
                 .map(ProductComponent::from)
                 .collect(Collectors.toList());
     }

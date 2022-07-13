@@ -1,7 +1,7 @@
-package com.example.Warehouse.repository.jpa;
+package com.example.Warehouse.repository.util;
 
-import com.example.Warehouse.domain.entity.DefaultProductEntity;
-import com.example.Warehouse.domain.entity.ProductComponentEntity;
+import com.example.Warehouse.repository.jpa.DefaultProductEntity;
+import com.example.Warehouse.repository.jpa.ProductComponentEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

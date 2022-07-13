@@ -1,4 +1,4 @@
-package com.example.Warehouse.domain.entity;
+package com.example.Warehouse.repository.jpa;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
