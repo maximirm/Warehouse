@@ -31,6 +31,5 @@ class ControllerTest {
         controller.getAllProductComponents();
 
         verify(warehouseService).getAllProductComponents();
-
     }
 }

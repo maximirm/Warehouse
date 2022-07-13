@@ -38,5 +38,4 @@ public class ProductComponent {
                 .setOrganic(productComponentEntity.isOrganic())
                 .setCalories(productComponentEntity.getCalories());
     }
-
 }

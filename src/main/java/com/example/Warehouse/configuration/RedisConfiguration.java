@@ -19,5 +19,4 @@ public class RedisConfiguration {
                 .disableCachingNullValues()
                 .serializeValuesWith(SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
     }
-
 }

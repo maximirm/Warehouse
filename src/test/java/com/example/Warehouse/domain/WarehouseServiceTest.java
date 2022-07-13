@@ -15,12 +15,12 @@ import static org.mockito.Mockito.verify;
 class WarehouseServiceTest {
 
     @InjectMocks
-    WarehouseService warehouseService;
+    private WarehouseService warehouseService;
 
     @Mock
-    DefaultProductRepository defaultProductRepository;
+    private DefaultProductRepository defaultProductRepository;
     @Mock
-    ProductComponentRepository productComponentRepository;
+    private ProductComponentRepository productComponentRepository;
 
     @Test
     void retrieveAllDefaultProducts() {

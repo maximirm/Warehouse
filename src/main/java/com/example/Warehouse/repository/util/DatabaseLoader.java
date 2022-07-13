@@ -21,7 +21,6 @@ class DatabaseLoader {
 
     private final ProductComponentCsvImporter productComponentCsvImporter;
     private final DefaultProductCsvImporter defaultProductCsvImporter;
-
     private final String PRODUCT_CSV = "src/main/resources/products.csv";
     private final String COMPONENTS_CSV = "src/main/resources/components.csv";
 

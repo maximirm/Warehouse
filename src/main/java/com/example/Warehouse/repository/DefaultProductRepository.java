@@ -8,5 +8,4 @@ import java.util.List;
 public interface DefaultProductRepository {
 
     List<DefaultProduct> findAll();
-
 }

@@ -19,7 +19,6 @@ public class WarehouseService {
     private final DefaultProductRepository defaultProductRepository;
     private final ProductComponentRepository productComponentRepository;
 
-
     public List<DefaultProduct> getAllDefaultProducts() {
         log.info("retrieve All Default Products from database");
         return defaultProductRepository.findAll();

@@ -21,7 +21,6 @@ import java.util.List;
 @Entity
 public class DefaultProductEntity {
 
-
     @Id
     @Column(nullable = false, unique = true)
     private int id;

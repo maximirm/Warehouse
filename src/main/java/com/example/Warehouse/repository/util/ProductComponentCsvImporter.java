@@ -21,10 +21,9 @@ public class ProductComponentCsvImporter {
         try {
             final MappingIterator<ProductComponentEntity> mappingIterator =
                     new CsvMapper()
-                    .enable(CsvParser.Feature.WRAP_AS_ARRAY)
-                    .readerWithSchemaFor(ProductComponentEntity.class)
-                    .readValues(new File(fileName));
-
+                            .enable(CsvParser.Feature.WRAP_AS_ARRAY)
+                            .readerWithSchemaFor(ProductComponentEntity.class)
+                            .readValues(new File(fileName));
             return mappingIterator.readAll();
         } catch (IOException e) {
             e.printStackTrace();
