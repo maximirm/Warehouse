@@ -20,12 +20,12 @@ public class WarehouseService {
     private final ProductComponentRepository productComponentRepository;
 
 
-    public List<DefaultProduct> retrieveAllDefaultProducts() {
+    public List<DefaultProduct> getAllDefaultProducts() {
         log.info("retrieve All Default Products from database");
         return defaultProductRepository.findAll();
     }
 
-    public List<ProductComponent> retrieveAllProductComponents() {
+    public List<ProductComponent> getAllProductComponents() {
         log.info("retrieve All Product Components from database");
         return productComponentRepository.findAll();
     }

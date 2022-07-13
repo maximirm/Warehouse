@@ -24,14 +24,14 @@ class WarehouseServiceTest {
 
     @Test
     void retrieveAllDefaultProducts() {
-        warehouseService.retrieveAllDefaultProducts();
+        warehouseService.getAllDefaultProducts();
 
         verify(defaultProductRepository, times(1)).findAll();
     }
 
     @Test
     void retrieveAllProductComponents() {
-        warehouseService.retrieveAllProductComponents();
+        warehouseService.getAllProductComponents();
 
         verify(productComponentRepository, times(1)).findAll();
     }

@@ -17,8 +17,8 @@ public class Controller {
     private final WarehouseService warehouseService;
 
     @GetMapping("/defaultProducts")
-    public List<DefaultProductResponse> retrieveAllProducts() {
-        return warehouseService.retrieveAllDefaultProducts()
+    public List<DefaultProductResponse> getAllDefaultProducts() {
+        return warehouseService.getAllDefaultProducts()
                 .stream()
                 .map(DefaultProductResponse::from)
                 .collect(Collectors.toList());
@@ -28,7 +28,7 @@ public class Controller {
     public List<ProductComponentResponse> getAllProductComponents() {
 
         return warehouseService
-                .retrieveAllProductComponents()
+                .getAllProductComponents()
                 .stream()
                 .map(ProductComponentResponse::from)
                 .collect(Collectors.toList());
