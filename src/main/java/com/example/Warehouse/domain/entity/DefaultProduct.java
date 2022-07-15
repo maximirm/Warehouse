@@ -1,6 +1,6 @@
 package com.example.Warehouse.domain.entity;
 
-import com.example.Warehouse.repository.jpa.DefaultProductEntity;
+import com.example.Warehouse.repository.entity.DefaultProductEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

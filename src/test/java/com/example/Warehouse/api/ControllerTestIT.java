@@ -1,7 +1,7 @@
 package com.example.Warehouse.api;
 
 
-import com.example.Warehouse.domain.WarehouseService;
+import com.example.Warehouse.domain.impl.WarehouseServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class ControllerTestIT {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
-    private WarehouseService warehouseService;
+    private WarehouseServiceImpl warehouseServiceImpl;
 
     @Test
     void get_all_default_products() {
@@ -30,7 +30,7 @@ public class ControllerTestIT {
             mockMvc.perform(get("/defaultProducts"))
                     .andExpect(status().isOk());
 
-            verify(warehouseService).getAllDefaultProducts();
+            verify(warehouseServiceImpl).getAllDefaultProducts();
         } catch (Exception e) {
             fail();
         }
@@ -42,7 +42,7 @@ public class ControllerTestIT {
             mockMvc.perform(get("/components"))
                     .andExpect(status().isOk());
 
-            verify(warehouseService).getAllProductComponents();
+            verify(warehouseServiceImpl).getAllProductComponents();
         } catch (Exception e) {
             fail();
         }

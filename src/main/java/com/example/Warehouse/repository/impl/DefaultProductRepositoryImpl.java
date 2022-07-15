@@ -1,6 +1,8 @@
-package com.example.Warehouse.repository;
+package com.example.Warehouse.repository.impl;
 
 import com.example.Warehouse.domain.entity.DefaultProduct;
+import com.example.Warehouse.repository.DefaultProductRepository;
+import com.example.Warehouse.repository.entity.DefaultProductEntity;
 import com.example.Warehouse.repository.jpa.DefaultProductEntityJpaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,12 +21,8 @@ public class DefaultProductRepositoryImpl implements DefaultProductRepository {
 
     @Cacheable(value = "userProductWarehouseCache")
     @Override
-    public List<DefaultProduct> findAll() {
+    public List<DefaultProductEntity> findAll() {
         log.info("get default products from repo without cache");
-        return defaultProductEntityJpaRepository
-                .findAll()
-                .stream()
-                .map(DefaultProduct::from)
-                .collect(Collectors.toList());
+        return defaultProductEntityJpaRepository.findAll();
     }
 }

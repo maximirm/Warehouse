@@ -1,6 +1,6 @@
 package com.example.Warehouse.api;
 
-import com.example.Warehouse.domain.WarehouseService;
+import com.example.Warehouse.domain.impl.WarehouseServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,14 +15,14 @@ class ControllerTest {
     @InjectMocks
     private Controller controller;
     @Mock
-    private WarehouseService warehouseService;
+    private WarehouseServiceImpl warehouseServiceImpl;
 
     @Test
     void retrieveAllProducts() {
 
         controller.getAllDefaultProducts();
 
-        verify(warehouseService).getAllDefaultProducts();
+        verify(warehouseServiceImpl).getAllDefaultProducts();
     }
 
     @Test
@@ -30,6 +30,6 @@ class ControllerTest {
 
         controller.getAllProductComponents();
 
-        verify(warehouseService).getAllProductComponents();
+        verify(warehouseServiceImpl).getAllProductComponents();
     }
 }

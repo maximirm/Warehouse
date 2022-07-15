@@ -1,11 +1,10 @@
 package com.example.Warehouse.repository;
 
-
-import com.example.Warehouse.domain.entity.DefaultProduct;
+import com.example.Warehouse.repository.entity.DefaultProductEntity;
 
 import java.util.List;
 
 public interface DefaultProductRepository {
 
-    List<DefaultProduct> findAll();
+    List<DefaultProductEntity> findAll();
 }

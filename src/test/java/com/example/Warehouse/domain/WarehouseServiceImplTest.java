@@ -1,5 +1,6 @@
 package com.example.Warehouse.domain;
 
+import com.example.Warehouse.domain.impl.WarehouseServiceImpl;
 import com.example.Warehouse.repository.DefaultProductRepository;
 import com.example.Warehouse.repository.ProductComponentRepository;
 import org.junit.jupiter.api.Test;
@@ -12,10 +13,10 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-class WarehouseServiceTest {
+class WarehouseServiceImplTest {
 
     @InjectMocks
-    private WarehouseService warehouseService;
+    private WarehouseServiceImpl warehouseServiceImpl;
     @Mock
     private DefaultProductRepository defaultProductRepository;
     @Mock
@@ -23,14 +24,14 @@ class WarehouseServiceTest {
 
     @Test
     void retrieveAllDefaultProducts() {
-        warehouseService.getAllDefaultProducts();
+        warehouseServiceImpl.getAllDefaultProducts();
 
         verify(defaultProductRepository, times(1)).findAll();
     }
 
     @Test
     void retrieveAllProductComponents() {
-        warehouseService.getAllProductComponents();
+        warehouseServiceImpl.getAllProductComponents();
 
         verify(productComponentRepository, times(1)).findAll();
     }

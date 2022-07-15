@@ -1,4 +1,4 @@
-package com.example.Warehouse.repository.jpa;
+package com.example.Warehouse.repository.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
