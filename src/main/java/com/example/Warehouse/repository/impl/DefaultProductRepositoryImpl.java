@@ -1,6 +1,5 @@
 package com.example.Warehouse.repository.impl;
 
-import com.example.Warehouse.domain.entity.DefaultProduct;
 import com.example.Warehouse.repository.DefaultProductRepository;
 import com.example.Warehouse.repository.entity.DefaultProductEntity;
 import com.example.Warehouse.repository.jpa.DefaultProductEntityJpaRepository;
@@ -10,7 +9,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Repository
