@@ -8,6 +8,7 @@ import com.example.Warehouse.repository.DefaultProductRepository;
 import com.example.Warehouse.repository.ProductComponentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,9 +22,10 @@ public class WarehouseServiceImpl implements WarehouseService {
     private final DefaultProductRepository defaultProductRepository;
     private final ProductComponentRepository productComponentRepository;
 
+    @Cacheable(value = "defaultProductCache")
     @Override
     public List<DefaultProduct> getAllDefaultProducts() {
-        log.info("retrieve All Default Products from database");
+        log.info("retrieve All Default Products from database without cache");
         return defaultProductRepository
                 .findAll()
                 .stream()
@@ -31,9 +33,10 @@ public class WarehouseServiceImpl implements WarehouseService {
                 .collect(Collectors.toList());
     }
 
+    @Cacheable(value = "productComponentCache")
     @Override
     public List<ProductComponent> getAllProductComponents() {
-        log.info("retrieve All Product Components from database");
+        log.info("retrieve All Product Components from database without cache");
         return productComponentRepository
                 .findAll()
                 .stream()
