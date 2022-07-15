@@ -1,6 +1,5 @@
-package com.example.Warehouse.domain.entity;
+package com.example.Warehouse.repository.entity;
 
-import com.example.Warehouse.repository.entity.ProductComponentEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

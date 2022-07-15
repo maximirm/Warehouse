@@ -10,6 +10,7 @@ import lombok.experimental.Accessors;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -18,7 +19,7 @@ import javax.persistence.Id;
 @Accessors(chain = true)
 @Entity
 @JsonPropertyOrder({"id", "name", "price", "weight", "color", "origin", "awesomeness", "farmer", "organic", "calories"})
-public class ProductComponentEntity {
+public class ProductComponentEntity implements Serializable {
 
     @Id
     @Column(nullable = false, unique = true)

@@ -1,7 +1,7 @@
 package com.example.Warehouse.domain;
 
-import com.example.Warehouse.domain.entity.DefaultProduct;
-import com.example.Warehouse.domain.entity.ProductComponent;
+import com.example.Warehouse.repository.entity.DefaultProduct;
+import com.example.Warehouse.repository.entity.ProductComponent;
 
 import java.util.List;
 

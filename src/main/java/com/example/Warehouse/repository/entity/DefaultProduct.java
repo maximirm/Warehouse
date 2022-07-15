@@ -1,6 +1,5 @@
-package com.example.Warehouse.domain.entity;
+package com.example.Warehouse.repository.entity;
 
-import com.example.Warehouse.repository.entity.DefaultProductEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +15,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Accessors(chain = true)
 public class DefaultProduct {
+
 
     private int id;
     private String name;
