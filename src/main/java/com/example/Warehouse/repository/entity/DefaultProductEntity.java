@@ -11,7 +11,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import java.io.Serializable;
 import java.util.List;
 
 @Getter
@@ -20,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @Accessors(chain = true)
 @Entity
-public class DefaultProductEntity implements Serializable {
+public class DefaultProductEntity {
 
     @Id
     @Column(nullable = false, unique = true)
