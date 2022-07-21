@@ -1,6 +1,6 @@
 package com.example.Warehouse.repository;
 
-import com.example.Warehouse.repository.entity.DefaultProduct;
+import com.example.Warehouse.entity.DefaultProduct;
 
 import java.util.List;
 

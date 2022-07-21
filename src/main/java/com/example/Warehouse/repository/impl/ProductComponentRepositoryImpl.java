@@ -1,6 +1,6 @@
 package com.example.Warehouse.repository.impl;
 
-import com.example.Warehouse.repository.entity.ProductComponent;
+import com.example.Warehouse.entity.ProductComponent;
 import com.example.Warehouse.repository.ProductComponentRepository;
 import com.example.Warehouse.repository.jpa.ProductComponentEntityJpaRepository;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
 package com.example.Warehouse.api.dto;
 
-import com.example.Warehouse.repository.entity.DefaultProduct;
+import com.example.Warehouse.entity.DefaultProduct;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
