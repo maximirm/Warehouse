@@ -1,7 +1,7 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3308/warehouse_db
+    url: jdbc:mysql://localhost:3306/warehouse_db
     username: user
     password: pw
 
